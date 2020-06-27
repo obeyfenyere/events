@@ -1,0 +1,50 @@
+group 'co.zw.hitrac'
+version '1.0-SNAPSHOT'
+
+buildscript {
+
+    ext {
+        springBootVersion = '2.0.5.RELEASE'
+    }
+    
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+
+    }
+}
+
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+
+
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile('org.springframework.boot:spring-boot-starter')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile group: 'org.thymeleaf.extras', name:'thymeleaf-extras-springsecurity4', version: '2.0.5.RELEASE'
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-web-services')
+    runtime('org.springframework.boot:spring-boot-devtools')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile 'mysql:mysql-connector-java'
+    compile group: 'org.webjars', name: 'bootstrap', version:'3.3.4'
+    compile group: 'org.webjars', name: 'jquery', version:'2.1.4'
+    compile("io.springfox:springfox-swagger2:2.0.2")
+    compile("io.springfox:springfox-swagger-ui:2.0.2")
+    compile group: 'com.graphql-java', name: 'graphql-java', version: '1.2'
+}
